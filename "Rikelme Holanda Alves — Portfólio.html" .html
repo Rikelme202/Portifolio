@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rikelme Holanda Alves</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05070B; --panel:#0B0F16; --panel2:#0F141D; --ink:#DCE8F5; --ink-dim:#63728A;
+    --blue:#3B9EFF; --line:#182230; --ok:#3FE08A;
+  }
+  :root[data-theme="light"]{
+    --bg:#F3F6FA; --panel:#FFFFFF; --panel2:#EDF1F6; --ink:#0E1420; --ink-dim:#5A6577;
+    --blue:#1B6FE0; --line:#D7E0EB; --ok:#0F9F5C;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0; background:var(--bg); color:var(--ink);}
+  body{
+    font-family:'JetBrains Mono', monospace;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    background:
+      repeating-linear-gradient(rgba(59,158,255,0.035) 0px, rgba(59,158,255,0.035) 1px, transparent 1px, transparent 3px),
+      radial-gradient(ellipse at 50% 0%, rgba(59,158,255,0.08), transparent 60%),
+      radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.55) 100%),
+      var(--bg);
+    position:relative;
+  }
+  :root[data-theme="light"] body{
+    background:
+      repeating-linear-gradient(rgba(27,111,224,0.03) 0px, rgba(27,111,224,0.03) 1px, transparent 1px, transparent 3px),
+      var(--bg);
+  }
+  #scanbeam{position:fixed; left:0; right:0; height:120px; top:-120px; z-index:1; pointer-events:none;
+    background:linear-gradient(rgba(59,158,255,0) 0%, rgba(59,158,255,0.05) 50%, rgba(59,158,255,0) 100%);
+    animation:scan 7s linear infinite;}
+  @keyframes scan{0%{top:-120px;} 100%{top:100%;}}
+  :root[data-theme="light"] #scanbeam{display:none;}
+  a{color:var(--blue);}
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px;}
+  .cursor{display:inline-block; width:9px; height:1.1em; background:var(--blue); margin-left:2px; vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* BOOT */
+  #boot{position:fixed; inset:0; background:var(--bg); z-index:20; display:flex; align-items:center; justify-content:center; padding:20px; transition:opacity .5s ease;}
+  #boot.hide{opacity:0; pointer-events:none;}
+  .term{width:100%; max-width:560px; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.5);}
+  .term-bar{display:flex; align-items:center; gap:7px; padding:10px 14px; border-bottom:1px solid var(--line); background:var(--panel2);}
+  .tdot{width:10px; height:10px; border-radius:50%;}
+  .tdot.r{background:#FF5F57;} .tdot.y{background:#FEBC2E;} .tdot.g{background:#28C840;}
+  .term-title{margin-left:8px; font-size:12px; color:var(--ink-dim);}
+  .term-body{padding:20px; font-size:14px; min-height:120px;}
+  .term-body .l{margin-bottom:8px; color:var(--ink-dim);}
+  .term-body .cmd{color:var(--blue);}
+  .term-body .l.prompt::before{content:"$ "; color:var(--ok);}
+
+  /* PAGE */
+  #page{opacity:0; transition:opacity .6s ease;}
+  #page.show{opacity:1;}
+
+  header.top{padding:26px 0 18px; display:flex; justify-content:space-between; align-items:baseline; font-size:12.5px; color:var(--ink-dim);}
+  header.top b{color:var(--blue);}
+  .theme-btn{background:none; border:1px solid var(--line); color:var(--ink-dim); font-family:inherit; font-size:11px; padding:5px 9px; border-radius:6px; cursor:pointer;}
+
+  /* TABS */
+  .tabs{display:flex; flex-wrap:wrap; gap:6px; border-bottom:1px solid var(--line); padding-bottom:14px;}
+  .tab{background:var(--panel); border:1px solid var(--line); color:var(--ink-dim); font-family:inherit; font-size:12.5px; padding:8px 12px; border-radius:7px 7px 0 0; cursor:pointer; transition:color .2s, border-color .2s;}
+  .tab::before{content:"$ "; color:var(--ok);}
+  .tab.active{color:var(--blue); border-color:var(--blue);}
+  .tab:hover{color:var(--ink);}
+
+  .console{padding-top:18px; min-height:340px;}
+  .cmdline{font-size:14px; margin-bottom:16px; color:var(--ink-dim);}
+  .cmdline .prompt{color:var(--ok);}
+  .cmdline .typed{color:var(--blue);}
+
+  .panel{opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease;}
+  .panel.shown{opacity:1; transform:translateY(0);}
+  .panel[hidden]{display:none;}
+
+  .hero h1{font-size:clamp(24px,5.5vw,32px); margin:0 0 4px; font-weight:700; letter-spacing:-0.01em;}
+  .hero .role{color:var(--blue); font-size:14px; margin-bottom:14px;}
+  .kv{font-size:13.5px; line-height:1.95;}
+  .kv .k{color:var(--ink-dim); display:inline-block; min-width:110px;}
+  .kv .v{color:var(--ink);}
+  .hero p.desc{font-size:13.5px; color:var(--ink-dim); line-height:1.7; margin:14px 0 0; max-width:60ch;}
+
+  h4.group{font-size:11.5px; color:var(--ink-dim); text-transform:lowercase; margin:20px 0 8px; font-weight:500;}
+  h4.group:first-child{margin-top:0;}
+
+  .rec{border-top:1px solid var(--line); padding:14px 0; cursor:pointer;}
+  .rec:first-child{border-top:none; padding-top:2px;}
+  .rec .row1{display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  .rec .title{color:var(--ink); font-size:14.5px; font-weight:600;}
+  .rec .sub{color:var(--blue); font-size:12px; margin-top:3px;}
+  .rec .chev{color:var(--ink-dim); transition:transform .2s ease; font-size:13px;}
+  .rec.open .chev{transform:rotate(90deg); color:var(--blue);}
+  .rec .out{max-height:0; overflow:hidden; opacity:0; transition:max-height .3s ease, opacity .25s ease, margin-top .3s ease;}
+  .rec.open .out{max-height:260px; opacity:1; margin-top:10px;}
+  .rec .out ul{margin:0; padding-left:16px; font-size:13px; color:var(--ink-dim); line-height:1.7; max-width:58ch;}
+  .rec .out .stack{margin-top:8px; font-size:12px; color:var(--ok);}
+  .rec .out .stack::before{content:"stack: ";}
+
+  /* VSCode-style code editor */
+  .ide{border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#1E1E1E;}
+  :root[data-theme="light"] .ide{background:#FFFFFF;}
+  .ide-tabbar{display:flex; background:var(--panel2); border-bottom:1px solid var(--line);}
+  .ide-tab{font-size:12px; padding:9px 16px; color:var(--ink-dim); border-right:1px solid var(--line); position:relative;}
+  .ide-tab.active{color:var(--ink); background:#1E1E1E;}
+  :root[data-theme="light"] .ide-tab.active{background:#FFFFFF;}
+  .ide-tab.active::after{content:""; position:absolute; left:0; right:0; top:0; height:2px; background:var(--blue);}
+  .code{padding:14px 0; font-size:13px; line-height:1.65; overflow-x:auto;}
+  .cl{display:flex;}
+  .cl .ln{flex:none; width:38px; text-align:right; padding-right:14px; color:#5A6470; user-select:none;}
+  .cl .src{white-space:pre; color:#D4D4D4;}
+  .cl .k{color:#9CDCFE;} .cl .s{color:#CE9178;} .cl .p{color:#D4D4D4;}
+  :root[data-theme="light"] .cl .src{color:#1E1E1E;}
+  :root[data-theme="light"] .cl .k{color:#0451A5;} :root[data-theme="light"] .cl .s{color:#A31515;} :root[data-theme="light"] .cl .p{color:#1E1E1E;}
+  .statusbar{background:var(--blue); color:#04101f; font-size:11px; padding:5px 14px; display:flex; justify-content:space-between;}
+
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{font-size:12.5px; padding:6px 11px; border:1px solid var(--line); border-radius:6px; color:var(--ink-dim); transition:color .2s, border-color .2s;}
+  .chip::before{content:"# "; color:var(--blue);}
+  .chip:hover{color:var(--blue); border-color:var(--blue);}
+
+  .certrow{border-top:1px solid var(--line); padding:12px 0; font-size:13.5px;}
+  .certrow:first-child{border-top:none;}
+  .certrow .t{color:var(--ink);}
+  .certrow .s{color:var(--ink-dim); font-size:12px; margin-top:2px;}
+
+  .edurow{border-top:1px solid var(--line); padding:12px 0; font-size:13.5px;}
+  .edurow:first-child{border-top:none;}
+  .edurow .t{color:var(--ink);}
+  .edurow .s{color:var(--ink-dim); font-size:12px; margin-top:2px;}
+  .edurow .s .tag{color:var(--ok);}
+
+  footer{padding:0;}
+  footer .l{font-size:13px; color:var(--ink-dim); margin-bottom:12px;}
+  .contact-rows{font-size:13.5px; line-height:2.1;}
+  .contact-rows .k{color:var(--ink-dim); display:inline-block; min-width:80px;}
+  .pagefoot{text-align:center; font-size:11px; color:var(--ink-dim); padding:40px 0 50px; opacity:.7;}
+
+  @media (prefers-reduced-motion: reduce){
+    .panel{transition:none; opacity:1; transform:none;}
+    .cursor{animation:none;}
+  }
+</style>
+</head>
+<body>
+<div id="scanbeam"></div>
+
+<div id="boot">
+  <div class="term">
+    <div class="term-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="term-title">rikelme@portfolio</span></div>
+    <div class="term-body">
+      <div class="l prompt"><span class="cmd" id="bootCmd"></span><span class="cursor" id="bootCursor"></span></div>
+      <div class="l" id="bootOut1" style="opacity:0"></div>
+      <div class="l" id="bootOut2" style="opacity:0"></div>
+      <div class="l" id="bootOut3" style="opacity:0"></div>
+    </div>
+  </div>
+</div>
+
+<div id="page">
+<div class="wrap">
+
+  <header class="top">
+    <div><b>portfolio://</b>rikelme</div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span>Teresina, PI</span>
+      <button class="theme-btn" id="themeBtn">modo claro</button>
+    </div>
+  </header>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="whoami">whoami</button>
+    <button class="tab" data-tab="experiencia">experiencia.log</button>
+    <button class="tab" data-tab="projetos">projetos.log</button>
+    <button class="tab" data-tab="skills">skills/</button>
+    <button class="tab" data-tab="educacao">educacao.log</button>
+    <button class="tab" data-tab="contato">contato.txt</button>
+  </div>
+
+  <div class="console">
+    <div class="cmdline"><span class="prompt">$ </span><span class="typed" id="cmdTyped"></span><span class="cursor"></span></div>
+
+    <div class="panel hero" data-panel="whoami">
+      <h1>Rikelme Holanda Alves</h1>
+      <div class="role">Estagiário</div>
+      <div class="kv">
+        <div><span class="k">objetivo:</span><span class="v">estágio em TI, Análise de Dados, BI, Ciência de Dados ou Programação</span></div>
+        <div><span class="k">formação:</span><span class="v">Tecnólogo em Banco de Dados, ênfase em Ciência de Dados — PIT</span></div>
+        <div><span class="k">stack:</span><span class="v">SQL/PostgreSQL, Python (Pandas), Java, JavaScript</span></div>
+        <div><span class="k">status:</span><span class="v" style="color:var(--ok)">disponível para novas oportunidades</span></div>
+      </div>
+      <p class="desc">Transformo dados brutos em dashboards e relatórios de BI que apoiam decisões reais — é o que faço hoje na SOMA e o que venho construindo desde a Caixa Econômica Federal.</p>
+    </div>
+
+    <div class="panel" data-panel="experiencia" hidden>
+      <div class="rec" data-toggle>
+        <div class="row1"><div><div class="title">Analista de Dados — Estágio</div><div class="sub">Construtora SOMA · 2025–2026</div></div><span class="chev">›</span></div>
+        <div class="out"><ul>
+          <li>Coleta e tratamento de dados</li>
+          <li>Criação de dashboards e relatórios de Business Intelligence (BI)</li>
+          <li>Elaboração de relatórios analíticos</li>
+          <li>Desenvolvimento de automação em Python para geração de relatórios</li>
+        </ul><div class="stack">Python (Pandas), JavaScript, Banco de Dados, Excel</div></div>
+      </div>
+      <div class="rec" data-toggle>
+        <div class="row1"><div><div class="title">Jovem Aprendiz</div><div class="sub">Caixa Econômica Federal · 2023–2025</div></div><span class="chev">›</span></div>
+        <div class="out"><ul>
+          <li>Organização de arquivos e documentos</li>
+          <li>Auxílio em sistemas internos</li>
+          <li>Conferência e digitalização</li>
+          <li>Apoio nas rotinas administrativas do setor de documentos</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="projetos" hidden>
+      <div class="rec" data-toggle>
+        <div class="row1"><div><div class="title">Rebem</div><div class="sub">projeto acadêmico · em desenvolvimento</div></div><span class="chev">›</span></div>
+        <div class="out">
+          <ul>
+            <li>Planejamento completo de app estilo Waze/Maps para rastreamento de estoque de remédios em hospitais e UBS</li>
+            <li>Responsável pela definição de escopo, MVP e arquitetura da solução</li>
+          </ul>
+          <div class="stack">Python, JavaScript, PostgreSQL</div>
+        </div>
+      </div>
+      <div class="rec" data-toggle>
+        <div class="row1"><div><div class="title">Assistente Digital de Saneamento</div><div class="sub">Hackathon "O Piauí que Queremos" · 2026</div></div><span class="chev">›</span></div>
+        <div class="out">
+          <ul>
+            <li>Autodiagnóstico de risco domiciliar, FAQ e dashboard por bairro/município</li>
+            <li>Submetido ao hackathon promovido pela Cidade Verde, com Águas do Piauí e Águas de Teresina</li>
+          </ul>
+          <div class="stack">PostgreSQL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="skills" hidden>
+      <div class="ide">
+        <div class="ide-tabbar">
+          <div class="ide-tab active">skills.json</div>
+        </div>
+        <div class="code" id="skillsCode">
+          <div class="cl"><span class="ln">1</span><span class="src"><span class="p">{</span></span></div>
+          <div class="cl"><span class="ln">2</span><span class="src">  <span class="k">"tecnicas"</span><span class="p">: [</span></span></div>
+          <div class="cl"><span class="ln">3</span><span class="src">    <span class="s">"SQL / PostgreSQL"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">4</span><span class="src">    <span class="s">"Banco de Dados Relacional"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">5</span><span class="src">    <span class="s">"Python (Pandas)"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">6</span><span class="src">    <span class="s">"APIs REST — consumo e integração"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">7</span><span class="src">    <span class="s">"Java"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">8</span><span class="src">    <span class="s">"JavaScript"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">9</span><span class="src">    <span class="s">"Programação Web"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">10</span><span class="src">    <span class="s">"Pacote Office"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">11</span><span class="src">    <span class="s">"Suporte Técnico"</span></span></div>
+          <div class="cl"><span class="ln">12</span><span class="src">  <span class="p">],</span></span></div>
+          <div class="cl"><span class="ln">13</span><span class="src">  <span class="k">"comportamentais"</span><span class="p">: [</span></span></div>
+          <div class="cl"><span class="ln">14</span><span class="src">    <span class="s">"Responsabilidade"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">15</span><span class="src">    <span class="s">"Organização"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">16</span><span class="src">    <span class="s">"Vontade de Aprender"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">17</span><span class="src">    <span class="s">"Cumprimento de Prazos"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">18</span><span class="src">    <span class="s">"Resolução de Problemas"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">19</span><span class="src">    <span class="s">"Trabalho em Equipe"</span></span></div>
+          <div class="cl"><span class="ln">20</span><span class="src">  <span class="p">],</span></span></div>
+          <div class="cl"><span class="ln">21</span><span class="src">  <span class="k">"idiomas"</span><span class="p">: {</span></span></div>
+          <div class="cl"><span class="ln">22</span><span class="src">    <span class="k">"portugues"</span><span class="p">: </span><span class="s">"nativo"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">23</span><span class="src">    <span class="k">"ingles"</span><span class="p">: </span><span class="s">"intermediário"</span><span class="p">,</span></span></div>
+          <div class="cl"><span class="ln">24</span><span class="src">    <span class="k">"espanhol"</span><span class="p">: </span><span class="s">"intermediário"</span></span></div>
+          <div class="cl"><span class="ln">25</span><span class="src">  <span class="p">}</span></span></div>
+          <div class="cl"><span class="ln">26</span><span class="src"><span class="p">}</span></span></div>
+        </div>
+        <div class="statusbar"><span>JSON</span><span>UTF-8 · LF · Ln 26, Col 1</span></div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="educacao" hidden>
+      <div class="edurow">
+        <div class="t">Tecnólogo em Banco de Dados, ênfase em Ciência de Dados</div>
+        <div class="s">Piauí Instituto de Tecnologia (PIT), Teresina, PI · <span class="tag">cursando</span> · previsão 07/2028</div>
+      </div>
+      <div class="edurow">
+        <div class="t">Técnico em Administração</div>
+        <div class="s">Instituto Federal do Piauí (IFPI)</div>
+      </div>
+      <h4 class="group">certificações</h4>
+      <div class="certrow"><div class="t">Java (Basic)</div><div class="s">HackerRank · 2026</div></div>
+      <div class="certrow"><div class="t">Linguagem de Programação Python — Básico</div><div class="s">Fundação Bradesco · 2026</div></div>
+      <div class="certrow"><div class="t">Administrando Banco de Dados</div><div class="s">Fundação Bradesco · 2026</div></div>
+    </div>
+
+    <div class="panel" data-panel="contato" hidden>
+      <footer>
+        <div class="l">Aberto a estágios e oportunidades em TI, Análise de Dados, BI, Ciência de Dados e Programação.</div>
+        <div class="contact-rows">
+          <div><span class="k">email:</span> <a href="mailto:rikelmeholanda3@gmail.com">rikelmeholanda3@gmail.com</a></div>
+          <div><span class="k">telefone:</span> <a href="tel:+5589994278568">(89) 99427-8568</a></div>
+          <div><span class="k">linkedin:</span> <a href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener">linkedin.com/in/rikelme-holanda-alves</a></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="pagefoot">-- fim da consulta --</div>
+</div>
+</div>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function typeInto(el, text, speed, cb){
+    if(reduced){ el.textContent = text; cb && cb(); return; }
+    el.textContent = '';
+    var i = 0;
+    var iv = setInterval(function(){
+      el.textContent += text[i]; i++;
+      if(i >= text.length){ clearInterval(iv); cb && cb(); }
+    }, speed);
+  }
+
+  var boot = document.getElementById('boot');
+  var page = document.getElementById('page');
+  var bootCmd = document.getElementById('bootCmd');
+  var o1 = document.getElementById('bootOut1'), o2 = document.getElementById('bootOut2'), o3 = document.getElementById('bootOut3');
+
+  var tabCommands = {
+    whoami: 'whoami',
+    experiencia: 'cat experiencia.log',
+    projetos: 'cat projetos.log',
+    skills: 'ls skills/',
+    educacao: 'cat educacao.log',
+    contato: 'cat contato.txt'
+  };
+
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.panel[data-panel]');
+  var cmdTyped = document.getElementById('cmdTyped');
+
+  function runTab(name){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-tab') === name); });
+    panels.forEach(function(p){
+      p.hidden = true; p.classList.remove('shown');
+    });
+    typeInto(cmdTyped, tabCommands[name], 26, function(){
+      var target = document.querySelector('.panel[data-panel="'+name+'"]');
+      target.hidden = false;
+      requestAnimationFrame(function(){ target.classList.add('shown'); });
+    });
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ runTab(t.getAttribute('data-tab')); });
+  });
+
+  function finishBoot(){
+    boot.classList.add('hide');
+    page.classList.add('show');
+    setTimeout(function(){ boot.style.display = 'none'; }, 550);
+    runTab('whoami');
+  }
+
+  if(reduced){
+    finishBoot();
+  } else {
+    typeInto(bootCmd, 'gerar --portfolio rikelme --full', 32, function(){
+      setTimeout(function(){
+        o1.textContent = '> carregando perfil...'; o1.style.transition = 'opacity .3s'; o1.style.opacity = 1;
+        setTimeout(function(){
+          o2.textContent = '> compilando experiência, projetos e skills...'; o2.style.transition = 'opacity .3s'; o2.style.opacity = 1;
+          setTimeout(function(){
+            o3.textContent = '> concluído.'; o3.style.color = 'var(--ok)'; o3.style.transition = 'opacity .3s'; o3.style.opacity = 1;
+            setTimeout(finishBoot, 600);
+          }, 500);
+        }, 500);
+      }, 250);
+    });
+  }
+
+  document.querySelectorAll('[data-toggle]').forEach(function(rec){
+    rec.addEventListener('click', function(){ rec.classList.toggle('open'); });
+  });
+
+  document.querySelectorAll('[data-folder]').forEach(function(f){
+    f.addEventListener('click', function(){ f.classList.toggle('open'); });
+  });
+
+  var btn = document.getElementById('themeBtn');
+  btn.addEventListener('click', function(){
+    var root = document.documentElement;
+    if(root.getAttribute('data-theme') === 'light'){
+      root.removeAttribute('data-theme'); btn.textContent = 'modo claro';
+    } else {
+      root.setAttribute('data-theme','light'); btn.textContent = 'modo escuro';
+    }
+  });
+})();
+</script>
+</body>
+</html>
