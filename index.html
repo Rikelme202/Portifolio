@@ -3,402 +3,491 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Rikelme Holanda Alves</title>
+<title>Rikelme Holanda Alves · Dados & BI</title>
+<meta name="description" content="Rikelme Holanda Alves — estudante de Banco de Dados com ênfase em Ciência de Dados. SQL, PostgreSQL, Python (Pandas) e automação de relatórios. Disponível para estágio em Dados, BI e Desenvolvimento em Picos-PI, Teresina-PI ou remoto.">
+<meta name="author" content="Rikelme Holanda Alves">
+<meta name="theme-color" content="#0B0F17">
+<link rel="canonical" href="https://portifolio-rikelme1.vercel.app/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Rikelme Holanda Alves · Dados & BI">
+<meta property="og:description" content="SQL, PostgreSQL e Python aplicados a relatórios, dashboards e automação. Disponível para estágio em Dados, BI e Desenvolvimento.">
+<meta property="og:url" content="https://portifolio-rikelme1.vercel.app/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rikelme Holanda Alves · Dados &amp; BI">
+<meta name="twitter:description" content="SQL, PostgreSQL e Python aplicados a relatórios, dashboards e automação. Disponível para estágio.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F7BFF'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='white'%3ERH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rikelme Holanda Alves",
+  "jobTitle": "Estudante de Banco de Dados e Ciência de Dados",
+  "email": "mailto:rikelmeholanda3@gmail.com",
+  "address": [{"@type": "PostalAddress", "addressLocality": "Picos", "addressRegion": "PI", "addressCountry": "BR"}, {"@type": "PostalAddress", "addressLocality": "Teresina", "addressRegion": "PI", "addressCountry": "BR"}],
+  "telephone": "+5589994278568",
+  "url": "https://portifolio-rikelme1.vercel.app/",
+  "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Piauí Instituto de Tecnologia"}, {"@type": "EducationalOrganization", "name": "Instituto Federal do Piauí"}],
+  "knowsAbout": ["SQL", "PostgreSQL", "Python", "Pandas", "Análise de Dados", "Business Intelligence", "APIs REST", "Java", "JavaScript"],
+  "sameAs": ["https://linkedin.com/in/rikelme-holanda-alves", "https://github.com/Rikelme202"]
+}
+</script>
 <style>
   :root{
-    --bg:#05070B; --panel:#0B0F16; --panel2:#0F141D; --ink:#DCE8F5; --ink-dim:#63728A;
-    --blue:#3B9EFF; --line:#182230; --ok:#3FE08A;
+    --bg:#F7F8FA; --surface:#FFFFFF; --surface-2:#F0F2F6; --ink:#0E1420; --ink-2:#3A4556; --ink-dim:#6A7587;
+    --line:#E2E6EE; --accent:#1F6BFF; --accent-soft:rgba(31,107,255,.09); --ok:#0E9F5E; --ok-soft:rgba(14,159,94,.1);
+    --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
   }
-  :root[data-theme="light"]{
-    --bg:#F3F6FA; --panel:#FFFFFF; --panel2:#EDF1F6; --ink:#0E1420; --ink-dim:#5A6577;
-    --blue:#1B6FE0; --line:#D7E0EB; --ok:#0F9F5C;
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B0F17; --surface:#111722; --surface-2:#161D2A; --ink:#E7EDF6; --ink-2:#B4BFCF; --ink-dim:#7D8A9E;
+      --line:#1F2837; --accent:#5B9BFF; --accent-soft:rgba(91,155,255,.12); --ok:#3FD58A; --ok-soft:rgba(63,213,138,.12);
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.25);
+    }
   }
+  :root[data-theme="dark"]{
+    --bg:#0B0F17; --surface:#111722; --surface-2:#161D2A; --ink:#E7EDF6; --ink-2:#B4BFCF; --ink-dim:#7D8A9E;
+    --line:#1F2837; --accent:#5B9BFF; --accent-soft:rgba(91,155,255,.12); --ok:#3FD58A; --ok-soft:rgba(63,213,138,.12);
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.25);
+  }
+
   *{box-sizing:border-box;}
-  html,body{margin:0; background:var(--bg); color:var(--ink);}
-  body{
-    font-family:'JetBrains Mono', monospace;
-    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-    background:
-      repeating-linear-gradient(rgba(59,158,255,0.035) 0px, rgba(59,158,255,0.035) 1px, transparent 1px, transparent 3px),
-      radial-gradient(ellipse at 50% 0%, rgba(59,158,255,0.08), transparent 60%),
-      radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.55) 100%),
-      var(--bg);
-    position:relative;
+  html{scroll-behavior:smooth; scroll-padding-top:76px;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
+  .skip{position:absolute; left:-999px; top:8px; background:var(--accent); color:#fff; padding:8px 12px; border-radius:6px; z-index:100;}
+  .skip:focus{left:8px;}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;}
+
+  /* NAV */
+  .nav{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:saturate(1.4) blur(10px); -webkit-backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line);}
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px; gap:16px;}
+  .brand{font-family:'JetBrains Mono',monospace; font-weight:600; font-size:14px; color:var(--ink);}
+  .brand span{color:var(--accent);}
+  .nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0; font-size:14px;}
+  .nav ul a{color:var(--ink-2);}
+  .nav ul a:hover{color:var(--ink); text-decoration:none;}
+  .nav-right{display:flex; align-items:center; gap:10px;}
+  .icon-btn{width:36px; height:36px; display:inline-grid; place-items:center; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); border-radius:8px; cursor:pointer;}
+  .icon-btn:hover{color:var(--ink);}
+  .icon-btn svg{width:17px; height:17px;}
+
+  /* BUTTONS */
+  .btn{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14.5px; padding:11px 18px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink); transition:transform .15s ease, border-color .15s ease, background .15s ease;}
+  .btn:hover{text-decoration:none; border-color:var(--accent); transform:translateY(-1px);}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn.primary:hover{filter:brightness(1.06);}
+  .btn svg{width:17px; height:17px; flex:none;}
+
+  /* HERO */
+  .hero{padding:72px 0 56px;}
+  .status{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--ok); background:var(--ok-soft); padding:6px 12px; border-radius:999px;}
+  .status::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--ok); box-shadow:0 0 0 0 var(--ok); animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent);} 70%{box-shadow:0 0 0 8px transparent;} 100%{box-shadow:0 0 0 0 transparent;}}
+  .hero h1{font-size:clamp(34px,6vw,56px); line-height:1.08; letter-spacing:-0.03em; margin:20px 0 12px; font-weight:800;}
+  .hero .headline{font-size:clamp(18px,2.4vw,22px); color:var(--ink-2); font-weight:500; margin:0 0 18px; letter-spacing:-0.01em;}
+  .hero .headline b{color:var(--accent); font-weight:600;}
+  .hero .pitch{max-width:62ch; color:var(--ink-2); font-size:16.5px; margin:0 0 28px;}
+  .cta{display:flex; flex-wrap:wrap; gap:10px;}
+  .facts{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:48px;}
+  .fact{background:var(--surface); padding:18px 20px;}
+  .fact .k{font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-dim); font-weight:600;}
+  .fact .v{font-size:15px; font-weight:600; margin-top:4px; color:var(--ink);}
+
+  /* SECTIONS */
+  section{padding:56px 0; border-top:1px solid var(--line);}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:28px;}
+  .sec-head .idx{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent);}
+  .sec-head h2{font-size:26px; letter-spacing:-0.02em; margin:0; font-weight:700;}
+  .lead{color:var(--ink-2); max-width:70ch; margin:0;}
+
+  .about{display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:start;}
+  .about p{margin:0 0 14px; color:var(--ink-2);}
+  .about p:last-child{margin-bottom:0;}
+  .focus{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:var(--shadow);}
+  .focus h3{font-size:14px; margin:0 0 12px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-dim);}
+  .focus ul{margin:0; padding:0; list-style:none;}
+  .focus li{display:flex; gap:10px; padding:8px 0; border-top:1px solid var(--line); font-size:15px;}
+  .focus li:first-child{border-top:none; padding-top:0;}
+  .focus li::before{content:"→"; color:var(--accent); font-family:'JetBrains Mono',monospace;}
+
+  /* TIMELINE */
+  .timeline{position:relative; display:grid; gap:18px;}
+  .job{display:grid; grid-template-columns:180px 1fr; gap:28px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:var(--shadow);}
+  .job .when{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--ink-dim);}
+  .job .when .now{display:inline-block; margin-top:6px; color:var(--ok); background:var(--ok-soft); padding:2px 8px; border-radius:999px; font-size:11.5px;}
+  .job h3{margin:0; font-size:18px; letter-spacing:-0.01em;}
+  .job .org{color:var(--accent); font-weight:600; font-size:15px; margin:2px 0 12px;}
+  .job ul{margin:0; padding-left:18px; color:var(--ink-2);}
+  .job li{margin:6px 0;}
+  .job li::marker{color:var(--accent);}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:14px;}
+  .tag{font-family:'JetBrains Mono',monospace; font-size:12px; padding:4px 9px; border-radius:6px; background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line);}
+
+  /* PROJECTS */
+  .projects{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .proj{display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:var(--shadow); transition:transform .2s ease, border-color .2s ease;}
+  .proj:hover{transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent) 45%, var(--line));}
+  .proj .badge{align-self:flex-start; font-size:12px; font-weight:600; color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:999px; margin-bottom:14px;}
+  .proj h3{margin:0 0 8px; font-size:18px; letter-spacing:-0.01em;}
+  .proj p{margin:0 0 12px; color:var(--ink-2); font-size:15px;}
+  .proj dl{margin:0 0 4px; font-size:14px;}
+  .proj dt{font-weight:600; color:var(--ink); margin-top:10px;}
+  .proj dd{margin:2px 0 0; color:var(--ink-2);}
+  .proj .tags{margin-top:auto; padding-top:16px;}
+  .proj .links{display:flex; gap:14px; margin-top:14px; font-size:14px; font-weight:600;}
+  .proj .links a{display:inline-flex; align-items:center; gap:6px;}
+  .proj .links svg{width:15px; height:15px;}
+
+  /* SKILLS */
+  .skills{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .skill{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:var(--shadow);}
+  .skill h3{display:flex; align-items:center; gap:10px; margin:0 0 14px; font-size:16px;}
+  .skill h3 .ico{width:32px; height:32px; border-radius:8px; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center;}
+  .skill h3 .ico svg{width:17px; height:17px;}
+  .skill .tags{margin-top:0;}
+  .skill p{margin:12px 0 0; font-size:14px; color:var(--ink-dim);}
+
+  /* EDUCATION */
+  .edu{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:var(--shadow);}
+  .card h3{margin:0 0 16px; font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-dim);}
+  .row{padding:12px 0; border-top:1px solid var(--line);}
+  .row:first-of-type{border-top:none; padding-top:0;}
+  .row .t{font-weight:600;}
+  .row .s{font-size:14px; color:var(--ink-dim); margin-top:2px;}
+  .pill{display:inline-block; font-size:11.5px; font-weight:600; padding:2px 8px; border-radius:999px; color:var(--ok); background:var(--ok-soft); margin-left:6px; vertical-align:1px;}
+  .langs{display:flex; gap:24px; flex-wrap:wrap; margin-top:4px;}
+  .langs div{font-size:15px;} .langs span{color:var(--ink-dim); font-size:14px;}
+
+  /* CONTACT */
+  .contact{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:40px; box-shadow:var(--shadow); display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:center;}
+  .contact h2{font-size:clamp(24px,3.6vw,32px); letter-spacing:-0.02em; margin:0 0 10px;}
+  .contact p{margin:0; color:var(--ink-2);}
+  .clist{display:grid; gap:10px;}
+  .clist a{display:flex; align-items:center; gap:12px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; color:var(--ink); font-weight:500; font-size:15px; background:var(--bg); overflow-wrap:anywhere;}
+  .clist a:hover{border-color:var(--accent); text-decoration:none;}
+  .clist svg{width:18px; height:18px; color:var(--accent); flex:none;}
+
+  footer{padding:32px 0 48px; color:var(--ink-dim); font-size:13.5px;}
+  footer .wrap{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+
+  /* REVEAL */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  .no-js .reveal{opacity:1; transform:none;}
+
+  @media (max-width:900px){
+    .projects,.skills{grid-template-columns:1fr 1fr;}
+    .facts{grid-template-columns:1fr 1fr;}
+    .about,.contact{grid-template-columns:1fr;}
   }
-  :root[data-theme="light"] body{
-    background:
-      repeating-linear-gradient(rgba(27,111,224,0.03) 0px, rgba(27,111,224,0.03) 1px, transparent 1px, transparent 3px),
-      var(--bg);
+  @media (max-width:720px){
+    .nav .wrap{flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px;}
+    .nav ul{order:3; width:100%; overflow-x:auto; gap:18px; white-space:nowrap; padding-bottom:4px;}
+    .wrap{padding:0 16px;}
+    .hero{padding:48px 0 40px;}
+    .projects,.skills,.edu{grid-template-columns:1fr;}
+    .job{grid-template-columns:1fr; gap:10px; padding:20px;}
+    .contact{padding:24px;}
+    section{padding:44px 0;}
   }
-  #scanbeam{position:fixed; left:0; right:0; height:120px; top:-120px; z-index:1; pointer-events:none;
-    background:linear-gradient(rgba(59,158,255,0) 0%, rgba(59,158,255,0.05) 50%, rgba(59,158,255,0) 100%);
-    animation:scan 7s linear infinite;}
-  @keyframes scan{0%{top:-120px;} 100%{top:100%;}}
-  :root[data-theme="light"] #scanbeam{display:none;}
-  a{color:var(--blue);}
-  .wrap{max-width:720px; margin:0 auto; padding:0 20px;}
-  .cursor{display:inline-block; width:9px; height:1.1em; background:var(--blue); margin-left:2px; vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
-  @keyframes blink{50%{opacity:0;}}
-
-  /* BOOT */
-  #boot{position:fixed; inset:0; background:var(--bg); z-index:20; display:flex; align-items:center; justify-content:center; padding:20px; transition:opacity .5s ease;}
-  #boot.hide{opacity:0; pointer-events:none;}
-  .term{width:100%; max-width:560px; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.5);}
-  .term-bar{display:flex; align-items:center; gap:7px; padding:10px 14px; border-bottom:1px solid var(--line); background:var(--panel2);}
-  .tdot{width:10px; height:10px; border-radius:50%;}
-  .tdot.r{background:#FF5F57;} .tdot.y{background:#FEBC2E;} .tdot.g{background:#28C840;}
-  .term-title{margin-left:8px; font-size:12px; color:var(--ink-dim);}
-  .term-body{padding:20px; font-size:14px; min-height:120px;}
-  .term-body .l{margin-bottom:8px; color:var(--ink-dim);}
-  .term-body .cmd{color:var(--blue);}
-  .term-body .l.prompt::before{content:"$ "; color:var(--ok);}
-
-  /* PAGE */
-  #page{opacity:0; transition:opacity .6s ease;}
-  #page.show{opacity:1;}
-
-  header.top{padding:26px 0 18px; display:flex; justify-content:space-between; align-items:baseline; font-size:12.5px; color:var(--ink-dim);}
-  header.top b{color:var(--blue);}
-  .theme-btn{background:none; border:1px solid var(--line); color:var(--ink-dim); font-family:inherit; font-size:11px; padding:5px 9px; border-radius:6px; cursor:pointer;}
-
-  /* TABS */
-  .tabs{display:flex; flex-wrap:wrap; gap:6px; border-bottom:1px solid var(--line); padding-bottom:14px;}
-  .tab{background:var(--panel); border:1px solid var(--line); color:var(--ink-dim); font-family:inherit; font-size:12.5px; padding:8px 12px; border-radius:7px 7px 0 0; cursor:pointer; transition:color .2s, border-color .2s;}
-  .tab::before{content:"$ "; color:var(--ok);}
-  .tab.active{color:var(--blue); border-color:var(--blue);}
-  .tab:hover{color:var(--ink);}
-
-  .console{padding-top:18px; min-height:340px;}
-  .cmdline{font-size:14px; margin-bottom:16px; color:var(--ink-dim);}
-  .cmdline .prompt{color:var(--ok);}
-  .cmdline .typed{color:var(--blue);}
-
-  .panel{opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease;}
-  .panel.shown{opacity:1; transform:translateY(0);}
-  .panel[hidden]{display:none;}
-
-  .hero h1{font-size:clamp(24px,5.5vw,32px); margin:0 0 4px; font-weight:700; letter-spacing:-0.01em;}
-  .hero .role{color:var(--blue); font-size:14px; margin-bottom:14px;}
-  .kv{font-size:13.5px; line-height:1.95;}
-  .kv .k{color:var(--ink-dim); display:inline-block; min-width:110px;}
-  .kv .v{color:var(--ink);}
-  .hero p.desc{font-size:13.5px; color:var(--ink-dim); line-height:1.7; margin:14px 0 0; max-width:60ch;}
-
-  h4.group{font-size:11.5px; color:var(--ink-dim); text-transform:lowercase; margin:20px 0 8px; font-weight:500;}
-  h4.group:first-child{margin-top:0;}
-
-  .rec{border-top:1px solid var(--line); padding:14px 0; cursor:pointer;}
-  .rec:first-child{border-top:none; padding-top:2px;}
-  .rec .row1{display:flex; justify-content:space-between; align-items:center; gap:10px;}
-  .rec .title{color:var(--ink); font-size:14.5px; font-weight:600;}
-  .rec .sub{color:var(--blue); font-size:12px; margin-top:3px;}
-  .rec .chev{color:var(--ink-dim); transition:transform .2s ease; font-size:13px;}
-  .rec.open .chev{transform:rotate(90deg); color:var(--blue);}
-  .rec .out{max-height:0; overflow:hidden; opacity:0; transition:max-height .3s ease, opacity .25s ease, margin-top .3s ease;}
-  .rec.open .out{max-height:260px; opacity:1; margin-top:10px;}
-  .rec .out ul{margin:0; padding-left:16px; font-size:13px; color:var(--ink-dim); line-height:1.7; max-width:58ch;}
-  .rec .out .stack{margin-top:8px; font-size:12px; color:var(--ok);}
-  .rec .out .stack::before{content:"stack: ";}
-
-  /* VSCode-style code editor */
-  .ide{border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#1E1E1E;}
-  :root[data-theme="light"] .ide{background:#FFFFFF;}
-  .ide-tabbar{display:flex; background:var(--panel2); border-bottom:1px solid var(--line);}
-  .ide-tab{font-size:12px; padding:9px 16px; color:var(--ink-dim); border-right:1px solid var(--line); position:relative;}
-  .ide-tab.active{color:var(--ink); background:#1E1E1E;}
-  :root[data-theme="light"] .ide-tab.active{background:#FFFFFF;}
-  .ide-tab.active::after{content:""; position:absolute; left:0; right:0; top:0; height:2px; background:var(--blue);}
-  .code{padding:14px 0; font-size:13px; line-height:1.65; overflow-x:auto;}
-  .cl{display:flex;}
-  .cl .ln{flex:none; width:38px; text-align:right; padding-right:14px; color:#5A6470; user-select:none;}
-  .cl .src{white-space:pre; color:#D4D4D4;}
-  .cl .k{color:#9CDCFE;} .cl .s{color:#CE9178;} .cl .p{color:#D4D4D4;}
-  :root[data-theme="light"] .cl .src{color:#1E1E1E;}
-  :root[data-theme="light"] .cl .k{color:#0451A5;} :root[data-theme="light"] .cl .s{color:#A31515;} :root[data-theme="light"] .cl .p{color:#1E1E1E;}
-  .statusbar{background:var(--blue); color:#04101f; font-size:11px; padding:5px 14px; display:flex; justify-content:space-between;}
-
-  .chips{display:flex; flex-wrap:wrap; gap:8px;}
-  .chip{font-size:12.5px; padding:6px 11px; border:1px solid var(--line); border-radius:6px; color:var(--ink-dim); transition:color .2s, border-color .2s;}
-  .chip::before{content:"# "; color:var(--blue);}
-  .chip:hover{color:var(--blue); border-color:var(--blue);}
-
-  .certrow{border-top:1px solid var(--line); padding:12px 0; font-size:13.5px;}
-  .certrow:first-child{border-top:none;}
-  .certrow .t{color:var(--ink);}
-  .certrow .s{color:var(--ink-dim); font-size:12px; margin-top:2px;}
-
-  .edurow{border-top:1px solid var(--line); padding:12px 0; font-size:13.5px;}
-  .edurow:first-child{border-top:none;}
-  .edurow .t{color:var(--ink);}
-  .edurow .s{color:var(--ink-dim); font-size:12px; margin-top:2px;}
-  .edurow .s .tag{color:var(--ok);}
-
-  footer{padding:0;}
-  footer .l{font-size:13px; color:var(--ink-dim); margin-bottom:12px;}
-  .contact-rows{font-size:13.5px; line-height:2.1;}
-  .contact-rows .k{color:var(--ink-dim); display:inline-block; min-width:80px;}
-  .pagefoot{text-align:center; font-size:11px; color:var(--ink-dim); padding:40px 0 50px; opacity:.7;}
-
   @media (prefers-reduced-motion: reduce){
-    .panel{transition:none; opacity:1; transform:none;}
-    .cursor{animation:none;}
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .status::before{animation:none;}
+    .btn,.proj{transition:none;}
+  }
+  @media print{
+    .nav,.cta,.icon-btn,.skip,.status{display:none !important;}
+    .job,.proj,.skill,.card,.focus,.contact{box-shadow:none;}
+    body{background:#fff; color:#000;}
+    section{padding:20px 0; break-inside:avoid;}
+    .reveal{opacity:1; transform:none;}
   }
 </style>
 </head>
-<body>
-<div id="scanbeam"></div>
+<body class="no-js">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<div id="boot">
-  <div class="term">
-    <div class="term-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="term-title">rikelme@portfolio</span></div>
-    <div class="term-body">
-      <div class="l prompt"><span class="cmd" id="bootCmd"></span><span class="cursor" id="bootCursor"></span></div>
-      <div class="l" id="bootOut1" style="opacity:0"></div>
-      <div class="l" id="bootOut2" style="opacity:0"></div>
-      <div class="l" id="bootOut3" style="opacity:0"></div>
+<!-- ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-api" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.8 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#topo">rikelme<span>.dados</span></a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#competencias">Competências</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="icon-btn" href="https://github.com/Rikelme202" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a class="icon-btn" href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Alternar tema claro/escuro"><svg><use href="#i-moon"/></svg></button>
     </div>
   </div>
-</div>
+</nav>
 
-<div id="page">
-<div class="wrap">
+<main id="conteudo">
+  <header class="hero wrap" id="topo">
+    <span class="status">Disponível para estágio</span>
+    <h1>Rikelme Holanda Alves</h1>
+    <p class="headline">Dados &amp; BI · <b>SQL</b>, <b>PostgreSQL</b> e <b>Python</b></p>
+    <p class="pitch">Transformo dados espalhados em relatórios e dashboards que a gestão usa para decidir. Estudante de Banco de Dados com ênfase em Ciência de Dados, hoje na Construtora SOMA, coleto e trato dados, construo dashboards e automatizo relatórios com Python. Antes, passei dois anos na Caixa Econômica Federal, onde aprendi a trabalhar com rotina, precisão e processos.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:rikelmeholanda3@gmail.com?subject=Oportunidade%20de%20est%C3%A1gio"><svg><use href="#i-mail"/></svg>Entrar em contato</a>
+      <a class="btn" href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
+      <a class="btn" href="https://github.com/Rikelme202" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>GitHub</a>
+      <button class="btn" type="button" id="cvBtn"><svg><use href="#i-ext"/></svg>Baixar currículo (PDF)</button>
+    </div>
 
-  <header class="top">
-    <div><b>portfolio://</b>rikelme</div>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <span>Teresina, PI</span>
-      <button class="theme-btn" id="themeBtn">modo claro</button>
+    <div class="facts" role="list">
+      <div class="fact" role="listitem"><div class="k">Busco</div><div class="v">Estágio em Dados, BI ou Dev</div></div>
+      <div class="fact" role="listitem"><div class="k">Experiência</div><div class="v">3+ anos em empresas</div></div>
+      <div class="fact" role="listitem"><div class="k">Formação</div><div class="v">Tecnólogo BD · até 07/2028</div></div>
+      <div class="fact" role="listitem"><div class="k">Local</div><div class="v">Picos-PI e Teresina-PI · remoto/híbrido</div></div>
     </div>
   </header>
 
-  <div class="tabs" id="tabs">
-    <button class="tab active" data-tab="whoami">whoami</button>
-    <button class="tab" data-tab="experiencia">experiencia.log</button>
-    <button class="tab" data-tab="projetos">projetos.log</button>
-    <button class="tab" data-tab="skills">skills/</button>
-    <button class="tab" data-tab="educacao">educacao.log</button>
-    <button class="tab" data-tab="contato">contato.txt</button>
-  </div>
-
-  <div class="console">
-    <div class="cmdline"><span class="prompt">$ </span><span class="typed" id="cmdTyped"></span><span class="cursor"></span></div>
-
-    <div class="panel hero" data-panel="whoami">
-      <h1>Rikelme Holanda Alves</h1>
-      <div class="role">Estagiário</div>
-      <div class="kv">
-        <div><span class="k">objetivo:</span><span class="v">estágio em TI, Análise de Dados, BI, Ciência de Dados ou Programação</span></div>
-        <div><span class="k">formação:</span><span class="v">Tecnólogo em Banco de Dados, ênfase em Ciência de Dados — PIT</span></div>
-        <div><span class="k">stack:</span><span class="v">SQL/PostgreSQL, Python (Pandas), Java, JavaScript</span></div>
-        <div><span class="k">status:</span><span class="v" style="color:var(--ok)">disponível para novas oportunidades</span></div>
-      </div>
-      <p class="desc">Transformo dados brutos em dashboards e relatórios de BI que apoiam decisões reais — é o que faço hoje na SOMA e o que venho construindo desde a Caixa Econômica Federal.</p>
-    </div>
-
-    <div class="panel" data-panel="experiencia" hidden>
-      <div class="rec" data-toggle>
-        <div class="row1"><div><div class="title">Jovem-Aprendiz</div><div class="sub">Construtora SOMA · 2025–2026</div></div><span class="chev">›</span></div>
-        <div class="out"><ul>
-          <li>Coleta e tratamento de dados</li>
-          <li>Criação de dashboards e relatórios </li>
-          <li>Ajuda nas Rotinas administrativas</li>
-          <li>Desenvolvimento de automação em Python para geração de relatórios</li>
-        </ul><div class="stack">Python (Pandas), JavaScript, Banco de Dados, Excel , APIs REST — consumo e integração</div></div>
-      </div>
-      <div class="rec" data-toggle>
-        <div class="row1"><div><div class="title">Jovem Aprendiz</div><div class="sub">Caixa Econômica Federal · 2023–2025</div></div><span class="chev">›</span></div>
-        <div class="out"><ul>
-          <li>Organização de arquivos e documentos</li>
-          <li>Auxílio em sistemas internos</li>
-          <li>Conferência e digitalização</li>
-          <li>Apoio nas rotinas administrativas do setor de documentos</li>
-        </ul></div>
-      </div>
-    </div>
-
-    <div class="panel" data-panel="projetos" hidden>
-      <div class="rec" data-toggle>
-        <div class="row1"><div><div class="title">Rebem</div><div class="sub">projeto acadêmico · em desenvolvimento</div></div><span class="chev">›</span></div>
-        <div class="out">
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="idx">01</span><h2>Sobre</h2></div>
+      <div class="about">
+        <div class="reveal">
+          <p>Gosto de pegar dados espalhados em planilhas, sistemas e APIs e transformá-los em informação que alguém consegue usar para decidir. É isso que faço hoje na <strong>Construtora SOMA</strong>, onde escrevo scripts em Python para gerar relatórios que antes eram montados à mão.</p>
+          <p>Estou cursando <strong>Tecnólogo em Banco de Dados com ênfase em Ciência de Dados</strong> no Piauí Instituto de Tecnologia e tenho formação técnica em <strong>Administração pelo IFPI</strong>. Por isso entendo tanto a parte técnica quanto o lado do negócio que vai consumir o dado.</p>
+          <p>Fora do trabalho, aplico o que estudo em projetos com impacto local, como o hackathon <em>“O Piauí que Queremos”</em>, focado em saneamento, e um app para rastrear o estoque de medicamentos em hospitais e UBS.</p>
+        </div>
+        <aside class="focus reveal" aria-label="O que entrego">
+          <h3>O que entrego</h3>
           <ul>
-            <li>Planejamento completo de app estilo Waze/Maps para rastreamento de estoque de remédios em hospitais e UBS</li>
-            <li>Responsável pela definição de escopo, MVP e arquitetura da solução</li>
+            <li>Consultas SQL e modelagem relacional em PostgreSQL</li>
+            <li>Limpeza e tratamento de dados com Pandas</li>
+            <li>Automação de relatórios recorrentes</li>
+            <li>Dashboards para acompanhamento da gestão</li>
+            <li>Integração com APIs REST</li>
+            <li>Sistemas sob medida para a necessidade do cliente</li>
           </ul>
-          <div class="stack">Python, JavaScript, PostgreSQL</div>
-        </div>
-      </div>
-      <div class="rec" data-toggle>
-        <div class="row1"><div><div class="title">Assistente Digital de Saneamento</div><div class="sub">Hackathon "O Piauí que Queremos" · 2026</div></div><span class="chev">›</span></div>
-        <div class="out">
-          <ul>
-            <li>Autodiagnóstico de risco domiciliar, FAQ e dashboard por bairro/município</li>
-            <li>Submetido ao hackathon promovido pela Cidade Verde, com Águas do Piauí e Águas de Teresina</li>
-          </ul>
-          <div class="stack">PostgreSQL</div>
-        </div>
+        </aside>
       </div>
     </div>
+  </section>
 
-    <div class="panel" data-panel="skills" hidden>
-      <div class="ide">
-        <div class="ide-tabbar">
-          <div class="ide-tab active">skills.json</div>
-        </div>
-        <div class="code" id="skillsCode">
-          <div class="cl"><span class="ln">1</span><span class="src"><span class="p">{</span></span></div>
-          <div class="cl"><span class="ln">2</span><span class="src">  <span class="k">"tecnicas"</span><span class="p">: [</span></span></div>
-          <div class="cl"><span class="ln">3</span><span class="src">    <span class="s">"SQL / PostgreSQL"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">4</span><span class="src">    <span class="s">"Banco de Dados Relacional"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">5</span><span class="src">    <span class="s">"Python (Pandas)"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">6</span><span class="src">    <span class="s">"APIs REST — consumo e integração"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">7</span><span class="src">    <span class="s">"Java"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">8</span><span class="src">    <span class="s">"JavaScript"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">9</span><span class="src">    <span class="s">"Programação Web"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">10</span><span class="src">    <span class="s">"Pacote Office"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">11</span><span class="src">    <span class="s">"Suporte Técnico"</span></span></div>
-          <div class="cl"><span class="ln">12</span><span class="src">  <span class="p">],</span></span></div>
-          <div class="cl"><span class="ln">13</span><span class="src">  <span class="k">"comportamentais"</span><span class="p">: [</span></span></div>
-          <div class="cl"><span class="ln">14</span><span class="src">    <span class="s">"Responsabilidade"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">15</span><span class="src">    <span class="s">"Organização"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">16</span><span class="src">    <span class="s">"Vontade de Aprender"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">17</span><span class="src">    <span class="s">"Cumprimento de Prazos"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">18</span><span class="src">    <span class="s">"Resolução de Problemas"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">19</span><span class="src">    <span class="s">"Trabalho em Equipe"</span></span></div>
-          <div class="cl"><span class="ln">20</span><span class="src">  <span class="p">],</span></span></div>
-          <div class="cl"><span class="ln">21</span><span class="src">  <span class="k">"idiomas"</span><span class="p">: {</span></span></div>
-          <div class="cl"><span class="ln">22</span><span class="src">    <span class="k">"portugues"</span><span class="p">: </span><span class="s">"nativo"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">23</span><span class="src">    <span class="k">"ingles"</span><span class="p">: </span><span class="s">"intermediário"</span><span class="p">,</span></span></div>
-          <div class="cl"><span class="ln">24</span><span class="src">    <span class="k">"espanhol"</span><span class="p">: </span><span class="s">"intermediário"</span></span></div>
-          <div class="cl"><span class="ln">25</span><span class="src">  <span class="p">}</span></span></div>
-          <div class="cl"><span class="ln">26</span><span class="src"><span class="p">}</span></span></div>
-        </div>
-        <div class="statusbar"><span>JSON</span><span>UTF-8 · LF · Ln 26, Col 1</span></div>
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="idx">02</span><h2>Experiência</h2></div>
+      <div class="timeline">
+        <article class="job reveal">
+          <div class="when">2025 — 2026<br><span class="now">atual</span></div>
+          <div>
+            <h3>Jovem Aprendiz · Dados e Relatórios</h3>
+            <div class="org">Construtora SOMA</div>
+            <ul>
+              <li>Desenvolvi <strong>automações em Python (Pandas)</strong> que geram relatórios recorrentes e substituíram parte do trabalho manual em planilhas.</li>
+              <li>Coleto, limpo e padronizo dados de diferentes fontes (planilhas, bancos de dados e <strong>APIs REST</strong>) para deixá-los prontos para análise.</li>
+              <li>Construo <strong>dashboards e relatórios</strong> que apoiam a gestão no acompanhamento da operação.</li>
+              <li>Apoio as rotinas administrativas, o que me mantém perto das pessoas que usam os dados no dia a dia.</li>
+            </ul>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span><span class="tag">APIs REST</span><span class="tag">JavaScript</span><span class="tag">Excel</span></div>
+          </div>
+        </article>
+        <article class="job reveal">
+          <div class="when">2023 — 2025</div>
+          <div>
+            <h3>Jovem Aprendiz · Gestão Documental</h3>
+            <div class="org">Caixa Econômica Federal</div>
+            <ul>
+              <li>Organizei, conferi e digitalizei documentos em um <strong>ambiente bancário regulado</strong>, onde precisão e sigilo são obrigatórios.</li>
+              <li>Operei <strong>sistemas internos</strong> da instituição e dei apoio aos colegas no uso dessas ferramentas.</li>
+              <li>Apoiei as rotinas do setor de documentos, cumprindo prazos e seguindo processos padronizados.</li>
+            </ul>
+            <div class="tags"><span class="tag">Sistemas internos</span><span class="tag">Conferência de dados</span><span class="tag">Pacote Office</span></div>
+          </div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="panel" data-panel="educacao" hidden>
-      <div class="edurow">
-        <div class="t">Tecnólogo em Banco de Dados, ênfase em Ciência de Dados</div>
-        <div class="s">Piauí Instituto de Tecnologia (PIT), Teresina, PI · <span class="tag">cursando</span> · previsão 07/2028</div>
+  <section id="projetos">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="idx">03</span><h2>Projetos</h2></div>
+      <div class="projects">
+        <article class="proj reveal">
+          <span class="badge">Hackathon · 2026</span>
+          <h3>Assistente Digital de Saneamento</h3>
+          <p>Ferramenta para a população avaliar o risco sanitário da própria casa e para o poder público enxergar onde atuar.</p>
+          <dl>
+            <dt>Contexto</dt><dd>Hackathon “O Piauí que Queremos” (Cidade Verde, com Águas do Piauí e Águas de Teresina).</dd>
+            <dt>Solução</dt><dd>Autodiagnóstico de risco domiciliar, FAQ e dashboard com indicadores por bairro e município.</dd>
+          </dl>
+          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Modelagem de dados</span><span class="tag">Dashboard</span></div>
+        </article>
+        <article class="proj reveal">
+          <span class="badge">Acadêmico · em andamento</span>
+          <h3>Rebem</h3>
+          <p>App no estilo mapa, como o Waze, que mostra em quais hospitais e UBS cada medicamento está disponível.</p>
+          <dl>
+            <dt>Problema</dt><dd>O paciente não sabe onde encontrar o remédio de que precisa na rede pública.</dd>
+            <dt>Meu papel</dt><dd>Definição do escopo e do MVP, e desenho da arquitetura e do banco de dados.</dd>
+          </dl>
+          <div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span></div>
+        </article>
+        <article class="proj reveal">
+          <span class="badge">Escolar · IFPI</span>
+          <h3>EcoPneu Marketplace</h3>
+          <p>Marketplace web que conecta borracheiros, vendedores, artesãos e recicladores para dar um destino correto a pneus usados.</p>
+          <dl>
+            <dt>Destaques</dt><dd>Login e cadastro de usuários, catálogo com filtro por qualidade e dados persistidos no navegador com localStorage.</dd>
+          </dl>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="links"><a href="https://github.com/Rikelme202/ecopneu-marketplace" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Código</a></div>
+        </article>
       </div>
-      <div class="edurow">
-        <div class="t">Técnico em Administração</div>
-        <div class="s">Instituto Federal do Piauí (IFPI)</div>
-      </div>
-      <h4 class="group">certificações</h4>
-      <div class="certrow"><div class="t">Java (Basic)</div><div class="s">HackerRank · 2026</div></div>
-      <div class="certrow"><div class="t">Linguagem de Programação Python — Básico</div><div class="s">Fundação Bradesco · 2026</div></div>
-      <div class="certrow"><div class="t">Administrando Banco de Dados</div><div class="s">Fundação Bradesco · 2026</div></div>
     </div>
+  </section>
 
-    <div class="panel" data-panel="contato" hidden>
-      <footer>
-        <div class="l">Aberto a estágios e oportunidades em TI, Análise de Dados, BI, Ciência de Dados e Programação.</div>
-        <div class="contact-rows">
-          <div><span class="k">email:</span> <a href="mailto:rikelmeholanda3@gmail.com">rikelmeholanda3@gmail.com</a></div>
-          <div><span class="k">telefone:</span> <a href="tel:+5589994278568">(89) 99427-8568</a></div>
-          <div><span class="k">linkedin:</span> <a href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener">linkedin.com/in/rikelme-holanda-alves</a></div>
+  <section id="competencias">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="idx">04</span><h2>Competências</h2></div>
+      <div class="skills">
+        <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-db"/></svg></span>Banco de Dados</h3>
+          <div class="tags"><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Modelagem relacional</span><span class="tag">Administração de BD</span></div>
         </div>
-      </footer>
+        <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-chart"/></svg></span>Dados &amp; BI</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Tratamento de dados</span><span class="tag">Dashboards</span><span class="tag">Excel</span></div>
+        </div>
+        <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-code"/></svg></span>Programação</h3>
+          <div class="tags"><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Git</span></div>
+        </div>
+        <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-api"/></svg></span>Integração</h3>
+          <div class="tags"><span class="tag">APIs REST</span><span class="tag">JSON</span><span class="tag">Automação</span></div>
+        </div>
+        <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-tool"/></svg></span>Ferramentas</h3>
+          <div class="tags"><span class="tag">VS Code</span><span class="tag">Pacote Office</span><span class="tag">Suporte técnico</span></div>
+        </div>
+        <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-users"/></svg></span>Comportamentais</h3>
+          <div class="tags"><span class="tag">Responsabilidade</span><span class="tag">Organização</span><span class="tag">Prazos</span><span class="tag">Resolução de problemas</span><span class="tag">Trabalho em equipe</span></div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section id="formacao">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="idx">05</span><h2>Formação &amp; Certificações</h2></div>
+      <div class="edu">
+        <div class="card reveal">
+          <h3>Formação acadêmica</h3>
+          <div class="row">
+            <div class="t">Tecnólogo em Banco de Dados, ênfase em Ciência de Dados <span class="pill">cursando</span></div>
+            <div class="s">Piauí Instituto de Tecnologia (PIT) · Teresina-PI · previsão de conclusão: 07/2028</div>
+          </div>
+          <div class="row">
+            <div class="t">Técnico em Administração</div>
+            <div class="s">Instituto Federal do Piauí (IFPI)</div>
+          </div>
+          <div class="row">
+            <div class="t">Idiomas</div>
+            <div class="langs"><div>Português <span>· nativo</span></div><div>Inglês <span>· intermediário</span></div><div>Espanhol <span>· intermediário</span></div></div>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h3>Certificações</h3>
+          <div class="row"><div class="t">Administrando Banco de Dados</div><div class="s">Fundação Bradesco · 2026</div></div>
+          <div class="row"><div class="t">Linguagem de Programação Python — Básico</div><div class="s">Fundação Bradesco · 2026</div></div>
+          <div class="row"><div class="t">Java (Basic)</div><div class="s">HackerRank · 2026</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div>
+          <h2>Vamos conversar?</h2>
+          <p>Estou disponível para estágio em Análise de Dados, BI, Ciência de Dados ou Desenvolvimento, presencial em Picos ou Teresina, híbrido ou remoto.</p>
+        </div>
+        <div class="clist">
+          <a href="mailto:rikelmeholanda3@gmail.com"><svg><use href="#i-mail"/></svg>rikelmeholanda3@gmail.com</a>
+          <a href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>linkedin.com/in/rikelme-holanda-alves</a>
+          <a href="https://github.com/Rikelme202" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>github.com/Rikelme202</a>
+          <a href="tel:+5589994278568"><svg><use href="#i-phone"/></svg>(89) 99427-8568</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Rikelme Holanda Alves</span>
+    <span class="mono">feito à mão · HTML, CSS e JS</span>
   </div>
-
-  <div class="pagefoot">-- fim da consulta --</div>
-</div>
-</div>
+</footer>
 
 <script>
 (function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.body.classList.remove('no-js');
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  function typeInto(el, text, speed, cb){
-    if(reduced){ el.textContent = text; cb && cb(); return; }
-    el.textContent = '';
-    var i = 0;
-    var iv = setInterval(function(){
-      el.textContent += text[i]; i++;
-      if(i >= text.length){ clearInterval(iv); cb && cb(); }
-    }, speed);
-  }
-
-  var boot = document.getElementById('boot');
-  var page = document.getElementById('page');
-  var bootCmd = document.getElementById('bootCmd');
-  var o1 = document.getElementById('bootOut1'), o2 = document.getElementById('bootOut2'), o3 = document.getElementById('bootOut3');
-
-  var tabCommands = {
-    whoami: 'whoami',
-    experiencia: 'cat experiencia.log',
-    projetos: 'cat projetos.log',
-    skills: 'ls skills/',
-    educacao: 'cat educacao.log',
-    contato: 'cat contato.txt'
-  };
-
-  var tabs = document.querySelectorAll('.tab');
-  var panels = document.querySelectorAll('.panel[data-panel]');
-  var cmdTyped = document.getElementById('cmdTyped');
-
-  function runTab(name){
-    tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-tab') === name); });
-    panels.forEach(function(p){
-      p.hidden = true; p.classList.remove('shown');
-    });
-    typeInto(cmdTyped, tabCommands[name], 26, function(){
-      var target = document.querySelector('.panel[data-panel="'+name+'"]');
-      target.hidden = false;
-      requestAnimationFrame(function(){ target.classList.add('shown'); });
-    });
-  }
-
-  tabs.forEach(function(t){
-    t.addEventListener('click', function(){ runTab(t.getAttribute('data-tab')); });
-  });
-
-  function finishBoot(){
-    boot.classList.add('hide');
-    page.classList.add('show');
-    setTimeout(function(){ boot.style.display = 'none'; }, 550);
-    runTab('whoami');
-  }
-
-  if(reduced){
-    finishBoot();
-  } else {
-    typeInto(bootCmd, 'gerar --portfolio rikelme --full', 32, function(){
-      setTimeout(function(){
-        o1.textContent = '> carregando perfil...'; o1.style.transition = 'opacity .3s'; o1.style.opacity = 1;
-        setTimeout(function(){
-          o2.textContent = '> compilando experiência, projetos e skills...'; o2.style.transition = 'opacity .3s'; o2.style.opacity = 1;
-          setTimeout(function(){
-            o3.textContent = '> concluído.'; o3.style.color = 'var(--ok)'; o3.style.transition = 'opacity .3s'; o3.style.opacity = 1;
-            setTimeout(finishBoot, 600);
-          }, 500);
-        }, 500);
-      }, 250);
-    });
-  }
-
-  document.querySelectorAll('[data-toggle]').forEach(function(rec){
-    rec.addEventListener('click', function(){ rec.classList.toggle('open'); });
-  });
-
-  document.querySelectorAll('[data-folder]').forEach(function(f){
-    f.addEventListener('click', function(){ f.classList.toggle('open'); });
-  });
-
-  var btn = document.getElementById('themeBtn');
+  // tema: respeita o sistema, salva a escolha manual
+  var root = document.documentElement, btn = document.getElementById('themeBtn'), use = btn.querySelector('use');
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark(){ var t = root.getAttribute('data-theme'); return t ? t === 'dark' : mq.matches; }
+  function syncIcon(){ use.setAttribute('href', isDark() ? '#i-sun' : '#i-moon'); }
+  try { var saved = localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme', saved); } catch(e){}
+  syncIcon();
+  mq.addEventListener && mq.addEventListener('change', syncIcon);
   btn.addEventListener('click', function(){
-    var root = document.documentElement;
-    if(root.getAttribute('data-theme') === 'light'){
-      root.removeAttribute('data-theme'); btn.textContent = 'modo claro';
-    } else {
-      root.setAttribute('data-theme','light'); btn.textContent = 'modo escuro';
-    }
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+    syncIcon();
   });
+
+  // currículo: abre o diálogo de impressão (a folha de estilo de impressão gera o PDF)
+  document.getElementById('cvBtn').addEventListener('click', function(){ window.print(); });
+
+  // animação de entrada ao rolar
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.05});
+  els.forEach(function(e){ io.observe(e); });
 })();
 </script>
 </body>
