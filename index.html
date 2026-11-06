@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Rikelme Holanda Alves · Dados & BI</title>
-<meta name="description" content="Rikelme Holanda Alves — estudante de Banco de Dados com ênfase em Ciência de Dados. SQL, PostgreSQL, Python (Pandas) e automação de relatórios. Disponível para estágio em Dados, BI e Desenvolvimento em Picos-PI, Teresina-PI ou remoto.">
+<title>Rikelme Holanda Alves · Desenvolvimento & Dados</title>
+<meta name="description" content="Rikelme Holanda Alves — estudante de Banco de Dados com ênfase em Ciência de Dados. Desenvolve sistemas e automações com Python, JavaScript, Node.js e SQL. Disponível para estágio em Desenvolvimento, Dados e BI em Teresina-PI ou remoto.">
 <meta name="author" content="Rikelme Holanda Alves">
 <meta name="theme-color" content="#0B0F17">
 <link rel="canonical" href="https://portifolio-rikelme1.vercel.app/">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Rikelme Holanda Alves · Dados & BI">
-<meta property="og:description" content="SQL, PostgreSQL e Python aplicados a relatórios, dashboards e automação. Disponível para estágio em Dados, BI e Desenvolvimento.">
+<meta property="og:title" content="Rikelme Holanda Alves · Desenvolvimento & Dados">
+<meta property="og:description" content="Python, JavaScript, Node.js e SQL: sistemas, automações e APIs. Disponível para estágio em Desenvolvimento, Dados e BI.">
 <meta property="og:url" content="https://portifolio-rikelme1.vercel.app/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rikelme Holanda Alves · Dados &amp; BI">
-<meta name="twitter:description" content="SQL, PostgreSQL e Python aplicados a relatórios, dashboards e automação. Disponível para estágio.">
+<meta name="twitter:title" content="Rikelme Holanda Alves · Desenvolvimento &amp; Dados">
+<meta name="twitter:description" content="Python, JavaScript, Node.js e SQL: sistemas, automações e APIs. Disponível para estágio.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F7BFF'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='white'%3ERH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,14 +26,14 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Rikelme Holanda Alves",
-  "jobTitle": "Estudante de Banco de Dados e Ciência de Dados",
+  "jobTitle": "Desenvolvedor em formação · Banco de Dados e Ciência de Dados",
   "email": "mailto:rikelmeholanda3@gmail.com",
-  "address": [{"@type": "PostalAddress", "addressLocality": "Picos", "addressRegion": "PI", "addressCountry": "BR"}, {"@type": "PostalAddress", "addressLocality": "Teresina", "addressRegion": "PI", "addressCountry": "BR"}],
+  "address": {"@type": "PostalAddress", "addressLocality": "Teresina", "addressRegion": "PI", "addressCountry": "BR"},
   "telephone": "+5589994278568",
   "url": "https://portifolio-rikelme1.vercel.app/",
   "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Piauí Instituto de Tecnologia"}, {"@type": "EducationalOrganization", "name": "Instituto Federal do Piauí"}],
-  "knowsAbout": ["SQL", "PostgreSQL", "Python", "Pandas", "Análise de Dados", "Business Intelligence", "APIs REST", "Java", "JavaScript"],
-  "sameAs": ["https://linkedin.com/in/rikelme-holanda-alves", "https://github.com/Rikelme202"]
+  "knowsAbout": ["Python", "JavaScript", "Node.js", "SQL", "PostgreSQL", "Pandas", "Análise de Dados", "Business Intelligence", "APIs REST", "Java"],
+  "sameAs": ["https://www.linkedin.com/in/rikelme-holanda-alves-ba1990288/", "https://github.com/Rikelme202"]
 }
 </script>
 <style>
@@ -87,7 +87,7 @@
   .btn svg{width:17px; height:17px; flex:none;}
 
   /* HERO */
-  .hero{padding:72px 0 56px;}
+  .hero{padding:72px 24px 56px;}
   .status{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--ok); background:var(--ok-soft); padding:6px 12px; border-radius:999px;}
   .status::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--ok); box-shadow:0 0 0 0 var(--ok); animation:pulse 2s infinite;}
   @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent);} 70%{box-shadow:0 0 0 8px transparent;} 100%{box-shadow:0 0 0 0 transparent;}}
@@ -193,7 +193,7 @@
     .nav .wrap{flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px;}
     .nav ul{order:3; width:100%; overflow-x:auto; gap:18px; white-space:nowrap; padding-bottom:4px;}
     .wrap{padding:0 16px;}
-    .hero{padding:48px 0 40px;}
+    .hero{padding:48px 16px 40px;}
     .projects,.skills,.edu{grid-template-columns:1fr;}
     .job{grid-template-columns:1fr; gap:10px; padding:20px;}
     .contact{padding:24px;}
@@ -211,6 +211,135 @@
     body{background:#fff; color:#000;}
     section{padding:20px 0; break-inside:avoid;}
     .reveal{opacity:1; transform:none;}
+  }
+
+  /* ===== GLASS · camada de vidro estilo Apple ===== */
+  :root{
+    --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.72); --glass-brd:rgba(255,255,255,.8);
+    --glass-hi:inset 0 1px 0 rgba(255,255,255,.9), inset 0 0 0 1px rgba(255,255,255,.35);
+    --glass-shadow:0 1px 1px rgba(16,24,40,.04), 0 12px 32px -8px rgba(16,24,40,.14), 0 32px 64px -24px rgba(31,107,255,.14);
+    --line:rgba(16,24,40,.08); --r:24px; --ease:cubic-bezier(.22,1,.36,1);
+    --b1:rgba(31,107,255,.30); --b2:rgba(168,85,247,.22); --b3:rgba(20,200,170,.20);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --glass:rgba(28,36,56,.48); --glass-strong:rgba(34,44,68,.66); --glass-brd:rgba(255,255,255,.10);
+      --glass-hi:inset 0 1px 0 rgba(255,255,255,.12), inset 0 0 0 1px rgba(255,255,255,.04);
+      --glass-shadow:0 1px 1px rgba(0,0,0,.3), 0 16px 40px -10px rgba(0,0,0,.5);
+      --line:rgba(255,255,255,.08); --b1:rgba(70,130,255,.28); --b2:rgba(150,90,255,.22); --b3:rgba(30,200,170,.14);
+    }
+  }
+  :root[data-theme="dark"]{
+    --glass:rgba(28,36,56,.48); --glass-strong:rgba(34,44,68,.66); --glass-brd:rgba(255,255,255,.10);
+    --glass-hi:inset 0 1px 0 rgba(255,255,255,.12), inset 0 0 0 1px rgba(255,255,255,.04);
+    --glass-shadow:0 1px 1px rgba(0,0,0,.3), 0 16px 40px -10px rgba(0,0,0,.5);
+    --line:rgba(255,255,255,.08); --b1:rgba(70,130,255,.28); --b2:rgba(150,90,255,.22); --b3:rgba(30,200,170,.14);
+  }
+  body{position:relative; overflow-x:hidden;}
+  body::before{content:""; position:fixed; inset:-20%; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(38% 34% at 18% 22%, var(--b1), transparent 70%),
+      radial-gradient(34% 32% at 82% 14%, var(--b2), transparent 70%),
+      radial-gradient(40% 36% at 70% 82%, var(--b3), transparent 70%),
+      radial-gradient(30% 30% at 12% 86%, var(--b2), transparent 70%);
+    animation:drift 26s ease-in-out infinite alternate; will-change:transform;}
+  @keyframes drift{from{transform:translate3d(0,0,0) scale(1);} to{transform:translate3d(3%,-3%,0) scale(1.08) rotate(2deg);}}
+
+  .fact,.focus,.job,.proj,.skill,.card,.contact,.clist a,.btn,.icon-btn,.feat,.shot-viewer,.thumb{
+    background:var(--glass); border:1px solid var(--glass-brd); box-shadow:var(--glass-hi), var(--glass-shadow);
+    -webkit-backdrop-filter:blur(22px) saturate(1.8); backdrop-filter:blur(22px) saturate(1.8);
+  }
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .fact,.focus,.job,.proj,.skill,.card,.contact,.clist a,.btn,.icon-btn,.feat,.shot-viewer,.thumb{background:var(--surface);}
+  }
+  .focus,.job,.proj,.skill,.card,.feat{border-radius:var(--r);}
+  .contact{border-radius:32px;}
+  .fact{border-radius:20px;}
+  .facts{gap:12px; background:none; border:none; border-radius:0; overflow:visible;}
+  section{border-top:none;}
+
+  /* nav flutuante em pílula */
+  .nav{top:12px; background:none; border:none; -webkit-backdrop-filter:none; backdrop-filter:none; padding:0 16px; pointer-events:none;}
+  .nav .wrap{pointer-events:auto; max-width:1040px; height:56px; padding:0 12px 0 22px; border-radius:999px;
+    background:var(--glass); border:1px solid var(--glass-brd); box-shadow:var(--glass-hi), var(--glass-shadow);
+    -webkit-backdrop-filter:blur(24px) saturate(1.8); backdrop-filter:blur(24px) saturate(1.8);}
+  .nav ul a{padding:6px 12px; border-radius:999px; transition:background .3s var(--ease), color .3s var(--ease);}
+  .nav ul a:hover{background:var(--accent-soft);}
+  .nav ul{gap:4px;}
+  .icon-btn{border-radius:50%; box-shadow:var(--glass-hi);}
+
+  /* botões */
+  .btn{border-radius:999px; padding:12px 22px; transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .3s;}
+  .btn:hover{transform:translateY(-2px) scale(1.02);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 82%, #fff), var(--accent)); border-color:transparent;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.45), 0 10px 24px -8px color-mix(in srgb, var(--accent) 70%, transparent);}
+
+  /* movimento mais fluido */
+  .reveal{transform:translateY(22px) scale(.985); filter:blur(6px); transition:opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease);}
+  .reveal.in{filter:none;}
+  .proj,.job,.skill,.fact{transition:transform .5s var(--ease), box-shadow .5s var(--ease), border-color .3s;}
+  .proj:hover,.skill:hover,.job:hover{transform:translateY(-4px);}
+  .tag{background:color-mix(in srgb, var(--glass-strong) 70%, transparent); border-color:var(--glass-brd); border-radius:999px; padding:4px 11px;}
+  .proj .badge,.pill,.status{-webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);}
+  .clist a{border-radius:16px; transition:transform .4s var(--ease), border-color .3s;}
+  .clist a:hover{transform:translateX(3px);}
+  footer{padding-top:8px;}
+
+  /* ===== PROJETO EM DESTAQUE: Controle de Patrimônio ===== */
+  .feat{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr); gap:36px; padding:32px; margin-bottom:18px; align-items:start;}
+  .feat .badge{display:inline-block; font-size:12px; font-weight:600; color:var(--accent); background:var(--accent-soft); padding:4px 12px; border-radius:999px; margin-bottom:14px;}
+  .feat h3{margin:0 0 10px; font-size:26px; letter-spacing:-0.02em; line-height:1.15;}
+  .feat p{margin:0 0 14px; color:var(--ink-2);}
+  .feat ul{margin:0 0 4px; padding:0; list-style:none; display:grid; gap:9px; font-size:15px; color:var(--ink-2);}
+  .feat li{display:flex; gap:10px;}
+  .feat li::before{content:""; flex:none; width:7px; height:7px; margin-top:9px; border-radius:50%; background:var(--accent);}
+  .feat .tags{margin-top:18px;}
+  .feat .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .feat .links .btn{padding:10px 18px; font-size:14px;}
+  .feat .note{font-size:13px; color:var(--ink-dim); margin:16px 0 0;}
+  .gallery{min-width:0;}
+  .shot-viewer{position:relative; display:grid; place-items:center; aspect-ratio:16/10; width:100%; padding:10px; border-radius:20px; cursor:zoom-in; overflow:hidden; font:inherit; color:inherit;}
+  .shot-viewer img{width:100%; height:100%; border-radius:12px; display:block; object-fit:contain; transition:opacity .35s var(--ease), transform .6s var(--ease);}
+  .shot-viewer:hover img{transform:scale(1.015);}
+  .shot-viewer img.swap{opacity:0; transform:scale(.98);}
+  .shot-cap{margin:12px 4px 12px; font-size:14px; color:var(--ink-2); min-height:22px;}
+  .thumbs{display:flex; gap:10px; overflow-x:auto; padding:4px 2px 8px; scrollbar-width:none;}
+  .thumbs::-webkit-scrollbar{display:none;}
+  .thumb{flex:none; width:96px; height:62px; padding:4px; border-radius:14px; cursor:pointer; display:grid; place-items:center; transition:transform .4s var(--ease), border-color .3s;}
+  .thumb img{max-width:100%; max-height:100%; border-radius:8px; display:block;}
+  .thumb:hover{transform:translateY(-2px);}
+  .thumb[aria-current="true"]{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft), var(--glass-shadow);}
+
+  .mini-shots{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px;}
+  .mini-shot{padding:3px; border-radius:12px; cursor:zoom-in; border:1px solid var(--glass-brd); background:var(--glass); box-shadow:var(--glass-hi); transition:transform .4s var(--ease);}
+  .mini-shot:hover{transform:translateY(-2px) scale(1.02);}
+  .mini-shot img{display:block; width:100%; height:auto; border-radius:9px;}
+  dialog.lightbox{border:none; padding:0; background:transparent; max-width:min(94vw,1400px); max-height:92vh; overflow:visible; color:var(--ink);}
+  dialog.lightbox::backdrop{background:rgba(8,12,22,.55); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);}
+  dialog.lightbox[open]{animation:pop .5s var(--ease);}
+  @keyframes pop{from{opacity:0; transform:scale(.94) translateY(10px);} to{opacity:1; transform:none;}}
+  .lightbox .box{position:relative; padding:12px; border-radius:26px; background:var(--glass-strong); border:1px solid var(--glass-brd); box-shadow:var(--glass-hi), 0 40px 80px -20px rgba(0,0,0,.5); -webkit-backdrop-filter:blur(30px) saturate(1.8); backdrop-filter:blur(30px) saturate(1.8);}
+  .lightbox img{display:block; max-width:100%; max-height:80vh; margin:0 auto; border-radius:16px;}
+  .lightbox figcaption{padding:12px 8px 4px; text-align:center; font-size:14px; color:var(--ink-2);}
+  .lightbox .x{position:absolute; top:-14px; right:-14px; width:38px; height:38px; border-radius:50%; border:1px solid var(--glass-brd); background:var(--glass-strong); color:var(--ink); cursor:pointer; font-size:18px; line-height:1; box-shadow:var(--glass-shadow);}
+  @media (max-width:900px){ .feat{grid-template-columns:1fr; padding:22px; gap:24px;} }
+  @media (max-width:720px){
+    .nav .wrap{border-radius:26px; padding:8px 12px 8px 18px; height:auto; flex-wrap:wrap;}
+    .nav ul{padding-bottom:2px;}
+    .thumb{width:84px; height:56px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    body::before{animation:none;}
+    .reveal{filter:none;}
+    dialog.lightbox[open]{animation:none;}
+  }
+  @media print{
+    body::before{display:none;}
+    .fact,.focus,.job,.proj,.skill,.card,.contact,.clist a,.feat{background:#fff !important; -webkit-backdrop-filter:none; backdrop-filter:none; border-color:#ddd;}
+    .reveal{filter:none;}
+    .gallery{display:none;}
+    .feat{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -232,12 +361,13 @@
   <symbol id="i-api" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.8 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
   <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
 </svg>
 
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="brand" href="#topo">rikelme<span>.dados</span></a>
+    <a class="brand" href="#topo">rikelme<span>.dev</span></a>
     <ul>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#experiencia">Experiência</a></li>
@@ -248,7 +378,7 @@
     </ul>
     <div class="nav-right">
       <a class="icon-btn" href="https://github.com/Rikelme202" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
-      <a class="icon-btn" href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/rikelme-holanda-alves-ba1990288/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
       <button class="icon-btn" id="themeBtn" type="button" aria-label="Alternar tema claro/escuro"><svg><use href="#i-moon"/></svg></button>
     </div>
   </div>
@@ -258,20 +388,20 @@
   <header class="hero wrap" id="topo">
     <span class="status">Disponível para estágio</span>
     <h1>Rikelme Holanda Alves</h1>
-    <p class="headline">Dados &amp; BI · <b>SQL</b>, <b>PostgreSQL</b> e <b>Python</b></p>
-    <p class="pitch">Transformo dados espalhados em relatórios e dashboards que a gestão usa para decidir. Estudante de Banco de Dados com ênfase em Ciência de Dados, hoje na Construtora SOMA, coleto e trato dados, construo dashboards e automatizo relatórios com Python. Antes, passei dois anos na Caixa Econômica Federal, onde aprendi a trabalhar com rotina, precisão e processos.</p>
+    <p class="headline">Desenvolvimento &amp; Dados · <b>Python</b>, <b>JavaScript</b>, <b>Node.js</b> e <b>SQL</b></p>
+    <p class="pitch">Construo sistemas, automações e integrações que resolvem problemas reais da operação. Estudante de Banco de Dados com ênfase em Ciência de Dados, desenvolvi do zero um sistema web de controle de patrimônio e, na Construtora SOMA, escrevo scripts em Python que automatizam relatórios e integram dados via APIs. Antes, passei dois anos na Caixa Econômica Federal, onde aprendi a trabalhar com rotina, precisão e processos.</p>
     <div class="cta">
       <a class="btn primary" href="mailto:rikelmeholanda3@gmail.com?subject=Oportunidade%20de%20est%C3%A1gio"><svg><use href="#i-mail"/></svg>Entrar em contato</a>
-      <a class="btn" href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
+      <a class="btn" href="https://www.linkedin.com/in/rikelme-holanda-alves-ba1990288/" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
       <a class="btn" href="https://github.com/Rikelme202" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>GitHub</a>
-      <button class="btn" type="button" id="cvBtn"><svg><use href="#i-ext"/></svg>Baixar currículo (PDF)</button>
+      <a class="btn" href="Curriculo_Rikelme_Holanda_Alves.pdf" download="Curriculo_Rikelme_Holanda_Alves.pdf"><svg><use href="#i-download"/></svg>Baixar currículo (PDF)</a>
     </div>
 
     <div class="facts" role="list">
-      <div class="fact" role="listitem"><div class="k">Busco</div><div class="v">Estágio em Dados, BI ou Dev</div></div>
-      <div class="fact" role="listitem"><div class="k">Experiência</div><div class="v">3+ anos em empresas</div></div>
+      <div class="fact" role="listitem"><div class="k">Busco</div><div class="v">Estágio em Dev, Dados ou BI</div></div>
+      <div class="fact" role="listitem"><div class="k">Experiência</div><div class="v">2+ anos em empresas</div></div>
       <div class="fact" role="listitem"><div class="k">Formação</div><div class="v">Tecnólogo BD · até 07/2028</div></div>
-      <div class="fact" role="listitem"><div class="k">Local</div><div class="v">Picos-PI e Teresina-PI · remoto/híbrido</div></div>
+      <div class="fact" role="listitem"><div class="k">Local</div><div class="v">Teresina-PI · remoto/híbrido</div></div>
     </div>
   </header>
 
@@ -280,19 +410,18 @@
       <div class="sec-head reveal"><span class="idx">01</span><h2>Sobre</h2></div>
       <div class="about">
         <div class="reveal">
-          <p>Gosto de pegar dados espalhados em planilhas, sistemas e APIs e transformá-los em informação que alguém consegue usar para decidir. É isso que faço hoje na <strong>Construtora SOMA</strong>, onde escrevo scripts em Python para gerar relatórios que antes eram montados à mão.</p>
-          <p>Estou cursando <strong>Tecnólogo em Banco de Dados com ênfase em Ciência de Dados</strong> no Piauí Instituto de Tecnologia e tenho formação técnica em <strong>Administração pelo IFPI</strong>. Por isso entendo tanto a parte técnica quanto o lado do negócio que vai consumir o dado.</p>
+          <p>Gosto de transformar um problema do dia a dia em software que funciona. Hoje, na <strong>Construtora SOMA</strong>, escrevo scripts em <strong>Python</strong> que geram relatórios antes montados à mão e consomem dados de <strong>APIs REST</strong>. Por conta própria, desenvolvi um <strong>sistema web de controle de patrimônio</strong> com Node.js, SQLite e JavaScript, do banco de dados à interface.</p>
+          <p>Estou cursando <strong>Tecnólogo em Banco de Dados com ênfase em Ciência de Dados</strong> no Piauí Instituto de Tecnologia e tenho formação técnica em <strong>Administração pelo IFPI</strong>. Por isso entendo tanto o código quanto o lado do negócio que vai usar o sistema.</p>
           <p>Fora do trabalho, aplico o que estudo em projetos com impacto local, como o hackathon <em>“O Piauí que Queremos”</em>, focado em saneamento, e um app para rastrear o estoque de medicamentos em hospitais e UBS.</p>
         </div>
         <aside class="focus reveal" aria-label="O que entrego">
           <h3>O que entrego</h3>
           <ul>
+            <li>Sistemas web sob medida, do banco de dados à interface</li>
+            <li>Automação com Python, como relatórios recorrentes</li>
+            <li>Integração com APIs REST e tratamento de dados com Pandas</li>
             <li>Consultas SQL e modelagem relacional em PostgreSQL</li>
-            <li>Limpeza e tratamento de dados com Pandas</li>
-            <li>Automação de relatórios recorrentes</li>
             <li>Dashboards para acompanhamento da gestão</li>
-            <li>Integração com APIs REST</li>
-            <li>Sistemas sob medida para a necessidade do cliente</li>
           </ul>
         </aside>
       </div>
@@ -306,15 +435,15 @@
         <article class="job reveal">
           <div class="when">2025 — 2026<br><span class="now">atual</span></div>
           <div>
-            <h3>Jovem Aprendiz · Dados e Relatórios</h3>
+            <h3>Estagiário em T.I · Desenvolvimento e Dados</h3>
             <div class="org">Construtora SOMA</div>
             <ul>
-              <li>Desenvolvi <strong>automações em Python (Pandas)</strong> que geram relatórios recorrentes e substituíram parte do trabalho manual em planilhas.</li>
-              <li>Coleto, limpo e padronizo dados de diferentes fontes (planilhas, bancos de dados e <strong>APIs REST</strong>) para deixá-los prontos para análise.</li>
-              <li>Construo <strong>dashboards e relatórios</strong> que apoiam a gestão no acompanhamento da operação.</li>
-              <li>Apoio as rotinas administrativas, o que me mantém perto das pessoas que usam os dados no dia a dia.</li>
+              <li>Desenvolvo <strong>scripts e automações em Python (Pandas)</strong> que geram relatórios recorrentes e substituíram parte do trabalho manual em planilhas.</li>
+              <li>Integro dados de bancos de dados, planilhas e <strong>APIs REST</strong>, tratando e padronizando as informações com <strong>Python e SQL</strong>.</li>
+              <li>Construo <strong>dashboards e relatórios</strong> para acompanhamento da operação, com consultas SQL e JavaScript.</li>
+              <li>Apoio as rotinas da área e mantenho contato direto com quem usa os sistemas e relatórios no dia a dia.</li>
             </ul>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span><span class="tag">APIs REST</span><span class="tag">JavaScript</span><span class="tag">Excel</span></div>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span><span class="tag">APIs REST</span><span class="tag">JavaScript</span><span class="tag">Git</span></div>
           </div>
         </article>
         <article class="job reveal">
@@ -337,6 +466,40 @@
   <section id="projetos">
     <div class="wrap">
       <div class="sec-head reveal"><span class="idx">03</span><h2>Projetos</h2></div>
+
+      <article class="feat reveal" id="patrimonio">
+        <div>
+          <span class="badge">Sistema web · MVP funcional</span>
+          <h3>Controle de Patrimônio</h3>
+          <p>Sistema multiusuário para cadastrar, localizar e controlar os bens de uma organização, com código de barras, fotos e histórico de cada movimentação. Desenvolvi do zero, do banco de dados à interface.</p>
+          <ul>
+            <li><span><strong>Código de barras:</strong> cadastro por leitor USB ou pela câmera do celular, com etiquetas Code 128 para imprimir.</span></li>
+            <li><span><strong>Histórico:</strong> toda criação, transferência e baixa fica registrada com data, usuário e observação.</span></li>
+            <li><span><strong>Inventário por setor:</strong> mostra o que foi encontrado, o que está faltando e o que está fora do setor.</span></li>
+            <li><span><strong>Perfis de acesso e auditoria:</strong> administrador, usuário e consulta, com registro de logins e ações sensíveis.</span></li>
+            <li><span><strong>Fotos, importação e exportação:</strong> foto do bem, importação de planilha CSV com validação e exportação em Excel e PDF.</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">SQLite</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">API REST</span></div>
+          <div class="links">
+            <a class="btn primary" href="https://github.com/Rikelme202/Patrimonio" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Ver código</a>
+            <a class="btn" href="mailto:rikelmeholanda3@gmail.com?subject=Sistema%20de%20controle%20de%20patrim%C3%B4nio"><svg><use href="#i-mail"/></svg>Quero um sistema assim</a>
+          </div>
+          <p class="note">As telas usam dados fictícios de demonstração.</p>
+        </div>
+        <div class="gallery" aria-label="Telas do sistema de patrimônio">
+          <button class="shot-viewer" type="button" id="shotViewer" aria-label="Ampliar imagem"><img id="shotImg" src="img/patrimonio-painel.webp" alt="Painel do sistema com total de bens, valor patrimonial e gráficos por categoria e setor" width="1400" height="875"></button>
+          <p class="shot-cap" id="shotCap" aria-live="polite">Painel com total de bens, valor patrimonial e gráficos por categoria e setor.</p>
+          <div class="thumbs" id="thumbs">
+            <button class="thumb" type="button" aria-current="true" data-src="img/patrimonio-painel.webp" data-alt="Painel do sistema com total de bens, valor patrimonial e gráficos por categoria e setor" data-cap="Painel com total de bens, valor patrimonial e gráficos por categoria e setor."><img src="img/patrimonio-painel.webp" alt="" loading="lazy"></button>
+            <button class="thumb" type="button" data-src="img/patrimonio-lista.webp" data-alt="Lista de patrimônios com busca e filtros" data-cap="Lista de patrimônios com busca, filtros e exportação."><img src="img/patrimonio-lista.webp" alt="" loading="lazy"></button>
+            <button class="thumb" type="button" data-src="img/patrimonio-detalhe.webp" data-alt="Detalhe de um bem com código de barras e histórico de movimentações" data-cap="Detalhe do bem com código de barras e histórico de movimentações."><img src="img/patrimonio-detalhe.webp" alt="" loading="lazy"></button>
+            <button class="thumb" type="button" data-src="img/patrimonio-inventario.webp" data-alt="Tela de inventário por setor" data-cap="Inventário por conferência de código de barras."><img src="img/patrimonio-inventario.webp" alt="" loading="lazy"></button>
+            <button class="thumb" type="button" data-src="img/patrimonio-login.webp" data-alt="Tela de login do sistema" data-cap="Tela de login."><img src="img/patrimonio-login.webp" alt="" loading="lazy"></button>
+            <button class="thumb" type="button" data-src="img/patrimonio-celular-painel.webp" data-alt="Painel no celular" data-cap="Painel no celular: o sistema é responsivo."><img src="img/patrimonio-celular-painel.webp" alt="" loading="lazy"></button>
+            <button class="thumb" type="button" data-src="img/patrimonio-celular-lista.webp" data-alt="Lista de patrimônios no celular" data-cap="Lista de patrimônios no celular."><img src="img/patrimonio-celular-lista.webp" alt="" loading="lazy"></button>
+          </div>
+        </div>
+      </article>
       <div class="projects">
         <article class="proj reveal">
           <span class="badge">Hackathon · 2026</span>
@@ -365,6 +528,10 @@
           <dl>
             <dt>Destaques</dt><dd>Login e cadastro de usuários, catálogo com filtro por qualidade e dados persistidos no navegador com localStorage.</dd>
           </dl>
+          <div class="mini-shots">
+            <button type="button" class="mini-shot" data-src="img/ecopneu-compra.webp" data-alt="EcoPneu Marketplace: página de compra com filtros por qualidade e tipo" data-cap="EcoPneu: página de compra, com filtro por qualidade e tipo."><img src="img/ecopneu-compra.webp" alt="EcoPneu Marketplace: página de compra com filtros"></button>
+            <button type="button" class="mini-shot" data-src="img/ecopneu-venda.webp" data-alt="EcoPneu Marketplace: formulário para cadastrar um pneu à venda" data-cap="EcoPneu: formulário para cadastrar o pneu à venda."><img src="img/ecopneu-venda.webp" alt="EcoPneu Marketplace: formulário de venda"></button>
+          </div>
           <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
           <div class="links"><a href="https://github.com/Rikelme202/ecopneu-marketplace" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Código</a></div>
         </article>
@@ -377,16 +544,16 @@
       <div class="sec-head reveal"><span class="idx">04</span><h2>Competências</h2></div>
       <div class="skills">
         <div class="skill reveal">
+          <h3><span class="ico"><svg><use href="#i-code"/></svg></span>Programação</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Java</span><span class="tag">HTML/CSS</span><span class="tag">Git</span></div>
+        </div>
+        <div class="skill reveal">
           <h3><span class="ico"><svg><use href="#i-db"/></svg></span>Banco de Dados</h3>
           <div class="tags"><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Modelagem relacional</span><span class="tag">Administração de BD</span></div>
         </div>
         <div class="skill reveal">
           <h3><span class="ico"><svg><use href="#i-chart"/></svg></span>Dados &amp; BI</h3>
           <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Tratamento de dados</span><span class="tag">Dashboards</span><span class="tag">Excel</span></div>
-        </div>
-        <div class="skill reveal">
-          <h3><span class="ico"><svg><use href="#i-code"/></svg></span>Programação</h3>
-          <div class="tags"><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Git</span></div>
         </div>
         <div class="skill reveal">
           <h3><span class="ico"><svg><use href="#i-api"/></svg></span>Integração</h3>
@@ -428,6 +595,7 @@
           <div class="row"><div class="t">Administrando Banco de Dados</div><div class="s">Fundação Bradesco · 2026</div></div>
           <div class="row"><div class="t">Linguagem de Programação Python — Básico</div><div class="s">Fundação Bradesco · 2026</div></div>
           <div class="row"><div class="t">Java (Basic)</div><div class="s">HackerRank · 2026</div></div>
+          <div class="row"><div class="t">IA como Ferramenta de Aprendizagem e Pesquisa</div><div class="s">Fundação Getulio Vargas (FGV)</div></div>
         </div>
       </div>
     </div>
@@ -438,11 +606,11 @@
       <div class="contact reveal">
         <div>
           <h2>Vamos conversar?</h2>
-          <p>Estou disponível para estágio em Análise de Dados, BI, Ciência de Dados ou Desenvolvimento, presencial em Picos ou Teresina, híbrido ou remoto.</p>
+          <p>Estou disponível para estágio em Desenvolvimento, Análise de Dados, BI ou Ciência de Dados, presencial em Teresina, híbrido ou remoto.</p>
         </div>
         <div class="clist">
           <a href="mailto:rikelmeholanda3@gmail.com"><svg><use href="#i-mail"/></svg>rikelmeholanda3@gmail.com</a>
-          <a href="https://linkedin.com/in/rikelme-holanda-alves" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>linkedin.com/in/rikelme-holanda-alves</a>
+          <a href="https://www.linkedin.com/in/rikelme-holanda-alves-ba1990288/" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>linkedin.com/in/rikelme-holanda-alves-ba1990288</a>
           <a href="https://github.com/Rikelme202" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>github.com/Rikelme202</a>
           <a href="tel:+5589994278568"><svg><use href="#i-phone"/></svg>(89) 99427-8568</a>
         </div>
@@ -457,6 +625,15 @@
     <span class="mono">feito à mão · HTML, CSS e JS</span>
   </div>
 </footer>
+
+
+<dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+  <figure class="box" style="margin:0">
+    <button class="x" type="button" id="lbClose" aria-label="Fechar">×</button>
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</dialog>
 
 <script>
 (function(){
@@ -478,8 +655,29 @@
     syncIcon();
   });
 
-  // currículo: abre o diálogo de impressão (a folha de estilo de impressão gera o PDF)
-  document.getElementById('cvBtn').addEventListener('click', function(){ window.print(); });
+  // galeria do projeto de patrimônio
+  var shotImg = document.getElementById('shotImg'), shotCap = document.getElementById('shotCap'), thumbs = document.querySelectorAll('#thumbs .thumb');
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+  thumbs.forEach(function(t){
+    t.addEventListener('click', function(){
+      thumbs.forEach(function(o){ o.removeAttribute('aria-current'); });
+      t.setAttribute('aria-current','true');
+      shotImg.classList.add('swap');
+      setTimeout(function(){ shotImg.src = t.dataset.src; shotImg.alt = t.dataset.alt; shotCap.textContent = t.dataset.cap; shotImg.classList.remove('swap'); }, 180);
+    });
+  });
+  document.getElementById('shotViewer').addEventListener('click', function(){
+    if(!lb.showModal) return;
+    lbImg.src = shotImg.src; lbImg.alt = shotImg.alt; lbCap.textContent = shotCap.textContent; lb.showModal();
+  });
+  document.querySelectorAll('.mini-shot').forEach(function(m){
+    m.addEventListener('click', function(){
+      if(!lb.showModal) return;
+      lbImg.src = m.dataset.src; lbImg.alt = m.dataset.alt; lbCap.textContent = m.dataset.cap; lb.showModal();
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click', function(){ lb.close(); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) lb.close(); });
 
   // animação de entrada ao rolar
   var els = document.querySelectorAll('.reveal');
